@@ -30,7 +30,21 @@ h1 { margin: 0; }
     text-decoration: none;
     border-radius: 20px;
 }
+.stars span {
+    font-size: 35px;
+    cursor: pointer;
+    color: grey;
+    transition: 0.3s;
+}
 
+.stars span:hover {
+    color: gold;
+    transform: scale(1.2);
+}
+ @keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}   
 /* PRODUCTS */
 .section { padding: 30px; }
 
@@ -129,25 +143,42 @@ function rate(num) {
 <div class="section">
     <h2>💌 A Special Message</h2>
     <p>Does this hamper lighten your mood? 😊✨</p>
+<div class="stars">
+    <span onclick="rate(1)">★</span>
+    <span onclick="rate(2)">★</span>
+    <span onclick="rate(3)">★</span>
+    <span onclick="rate(4)">★</span>
+    <span onclick="rate(5)">★</span>
+</div>
 
-    <div class="stars">
-        <span onclick="rate(1)">★</span>
-        <span onclick="rate(2)">★</span>
-        <span onclick="rate(3)">★</span>
-        <span onclick="rate(4)">★</span>
-        <span onclick="rate(5)">★</span>
-    </div>
-
-    <div id="messageBox" style="display:none; margin-top:20px;">
-        <h3>💖 Your Message</h3>
-        <p>
-        Someone sent you this box to remind you:
-        you are loved, cared for, and deserve softness today 🤍
-        </p>
-    </div>
+    <div id="messageBox" style="display:none; margin-top:20px; animation: fadeIn 1s;">
+    <h3>💖 Your Message</h3>
+    <p>
+    Someone sent you this box to remind you:
+    you are loved, cared for, and deserve softness today 🤍
+    </p>
 </div>
 function showMessage() {
     document.getElementById("messageBox").style.display = "block";
+}
+<script>
+function rate(num) {
+    let stars = document.querySelectorAll(".stars span");
+
+    stars.forEach((s, i) => {
+        if(i < num) {
+            s.style.color = "gold";
+            s.style.transform = "scale(1.2)";
+        } else {
+            s.style.color = "grey";
+            s.style.transform = "scale(1)";
+        }
+    });
+
+    document.getElementById("messageBox").style.display = "block";
+
+    // Celebration effect
+    alert("✨ Thank you! Enjoy your surprise 💖");
 }
 </script>
 <div class="section">
