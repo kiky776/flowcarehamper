@@ -1,66 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
- <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>   
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Flow Care Hamper</title>
 
+<!-- FONT -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+
 <style>
 body {
     margin: 0;
-    font-family: 'Segoe UI', sans-serif;
-    background: #fff7f9;
+    font-family: 'Poppins', sans-serif;
+    background: #faf7f8;
+    color: #333;
     text-align: center;
 }
 
 /* HERO */
 .hero {
-    background: #f8d7da;
-    padding: 40px;
+    padding: 50px 20px;
 }
 
-h1 { margin: 0; }
-
-.btn {
-    display: inline-block;
-    margin-top: 15px;
-    padding: 10px 20px;
-    background: #d6336c;
-    color: white;
-    text-decoration: none;
-    border-radius: 20px;
-}
-.stars span {
-    font-size: 35px;
-    cursor: pointer;
-    color: grey;
-    transition: 0.3s;
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
 }
 
-.stars span:hover {
-    color: gold;
-    transform: scale(1.2);
+.hero p {
+    color: #777;
+    max-width: 300px;
+    margin: auto;
 }
- @keyframes fadeIn {
-    from {opacity: 0;}
-    to {opacity: 1;}
-}   
+
+/* GRID IMAGES */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    padding: 20px;
+}
+
+.grid img {
+    width: 100%;
+    border-radius: 10px;
+}
+
 /* PRODUCTS */
-.section { padding: 30px; }
+.section {
+    padding: 30px 20px;
+}
 
 .card {
     background: white;
-    margin: 15px auto;
     padding: 20px;
+    margin: 15px auto;
     border-radius: 15px;
     max-width: 300px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-    transition: 0.3s;
-}
-
-.card:hover {
-    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
 }
 
 .price {
@@ -68,30 +65,32 @@ h1 { margin: 0; }
     font-weight: bold;
 }
 
-/* MESSAGE BOX */
-#messageSection {
-    display: none;
-    padding: 30px;
+/* BUTTON */
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background: #d6336c;
+    color: white;
+    border-radius: 25px;
+    text-decoration: none;
+    margin-top: 15px;
 }
 
+/* TESTIMONIAL */
+.testimonial {
+    background: #fff0f3;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+/* STARS */
 .stars span {
     font-size: 30px;
     cursor: pointer;
     color: grey;
 }
 
-.stars span.active {
-    color: gold;
-}
-
-Order a Care Package 💝 {
-    margin-top: 15px;
-    padding: 10px 20px;
-    border: none;
-    background: #d6336c;
-    color: white;
-    border-radius: 20px;
-}
 </style>
 </head>
 
@@ -100,42 +99,87 @@ Order a Care Package 💝 {
 <!-- HERO -->
 <div class="hero">
     <h1>Flow Care Hamper 🌸</h1>
-    <p>Care and comfort through every cycle.</p>
-
-    <a class="btn" href="https://wa.me/+27642803141">Order on WhatsApp</a>
+    <p>Curated comfort. Thoughtful care. Delivered with love.</p>
 </div>
-<p style="margin-top:15px; font-weight:bold;">
-Perfect for gifting someone going through their cycle 💖
-</p>
+
+<!-- IMAGE GRID -->
+<div class="grid">
+    <img src="basic.jpg">
+    <img src="mid.jpg">
+    <img src="premium.jpg">
+    <img src="tea.jpg">
+</div>
+
 <!-- PRODUCTS -->
 <div class="section">
-   <h2>For the days you need extra care 🤍</h2>
-<p>Comfort, warmth, and love—delivered to you.</p>
-<p>✨ Trusted comfort for your cycle</p>
+    <h2>Our Hampers</h2>
+
     <div class="card">
-    <img src="Tier 1.jpeg" style="width:100%; border-radius:10px;">
-    <h3>Basic</h3>
-        <p>Chocolate, Tea, Eye Mask, Socks</p>
+        <h3>Basic</h3>
+        <p>Chocolate, Tea, Socks</p>
         <p class="price">KES 1,200</p>
     </div>
 
-  <div class="card">
-    <img src="Tier 2.jpeg" style="width:100%; border-radius:10px;">
-    <h3>Mid</h3>
+    <div class="card">
+        <h3>Mid 💖 Most Popular</h3>
         <p>Basic + Notebook + Soap</p>
         <p class="price">KES 1,500</p>
     </div>
 
     <div class="card">
-    <img src="Tier3.jpeg" style="width:100%; border-radius:10px;">
-    <h3>Premium</h3>
-        <p>Mid + Hot Water Bottle + Card</p>
+        <h3>Premium</h3>
+        <p>Everything + Hot Water Bottle</p>
         <p class="price">KES 1,800</p>
     </div>
- <div style="background:#fff0f3; padding:30px;">
+
+    <a class="btn" href="https://wa.me/2547XXXXXXXX">
+        Order a Care Package 💝
+    </a>
 </div>
 
-<!-- QR MESSAGE ENTRY -->
+<!-- QR MESSAGE -->
+<div class="section">
+    <h2>💌 A Hidden Message Inside</h2>
+    <p>Does this hamper lighten your mood? 😊</p>
+
+    <div class="stars">
+        <span onclick="rate(1)">★</span>
+        <span onclick="rate(2)">★</span>
+        <span onclick="rate(3)">★</span>
+        <span onclick="rate(4)">★</span>
+        <span onclick="rate(5)">★</span>
+    </div>
+
+    <p id="message" style="display:none; margin-top:15px;"></p>
+</div>
+
+<!-- TESTIMONIALS -->
+<div class="section">
+    <h2>What People Say 💬</h2>
+
+    <div class="testimonial">
+        “This made my day so much better 💖”
+    </div>
+
+    <div class="testimonial">
+        “The most thoughtful gift ever 🥹”
+    </div>
+</div>
+
+<!-- PAYMENT -->
+<div class="section">
+    <h2>💰 Payment (M-Pesa)</h2>
+    <p>Pay via M-Pesa:</p>
+    <p><strong>0712345678</strong></p>
+    <p>Send screenshot on WhatsApp after payment</p>
+</div>
+
+<!-- INSTAGRAM -->
+<div class="section">
+    <h2>📸 Follow Us</h2>
+    <p>@flowcarehamper</p>
+</div>
+
 <script>
 function rate(num) {
     let stars = document.querySelectorAll(".stars span");
@@ -145,88 +189,12 @@ function rate(num) {
         else s.style.color = "grey";
     });
 
-    document.getElementById("messageBox").style.display = "block";
+    document.getElementById("message").innerText =
+    "Someone sent this to remind you: you are loved 🤍";
+
+    document.getElementById("message").style.display = "block";
 }
 </script>
-<!-- MESSAGE SECTION -->
-<div class="section">
-    <h2>💌 A Hidden Message Inside Every Box</h2>
-<p style="max-width:300px; margin:auto;">
-Each hamper comes with a QR code.
-Scan it, tap a star, and unlock a message from someone who cares about you 🤍
-</p>
-    <p>Does this hamper lighten your mood? 😊✨</p>
-<div class="stars">
-    <span onclick="rate(1)">★</span>
-    <span onclick="rate(2)">★</span>
-    <span onclick="rate(3)">★</span>
-    <span onclick="rate(4)">★</span>
-    <span onclick="rate(5)">★</span>
-</div>
 
-    <div id="messageBox" style="display:none; margin-top:20px; animation: fadeIn 1s;">
-    <div id="messageBox" style="display:none; margin-top:20px; animation: fadeIn 1s;">
-    <h3>💌 A Message For You</h3>
-
-    <p style="font-size:18px;">
-    Someone thought of you.  
-    Someone wanted you to feel better.  
-    Someone chose this for you 🤍  
-    </p>
-
-    <p style="margin-top:15px;">
-    You are loved, cared for, and deserve softness today 💖
-    </p>
-</div>
-    <p>
-    Someone sent you this box to remind you:
-    you are loved, cared for, and deserve softness today 🤍
-    </p>
-</div>
-function showMessage() {
-    document.getElementById("messageBox").style.display = "block";
-}
-<script>
-function rate(num) {
-    let stars = document.querySelectorAll(".stars span");
-
-    stars.forEach((s, i) => {
-        if(i < num) {
-            s.style.color = "gold";
-            s.style.transform = "scale(1.2)";
-        } else {
-            s.style.color = "grey";
-            s.style.transform = "scale(1)";
-        }
-    });
-
-    document.getElementById("messageBox").style.display = "block";
-
-    // 🎊 CONFETTI
-    confetti({
-        particleCount: 100,
-        spread: 70,
-        origin: { y: 0.6 }
-    });
-}
-</script>
-<div class="section">
-    <h2>🛒 Order Your Box</h2>
-
-    <form>
-        <input type="text" placeholder="Your Name"><br><br>
-        <input type="text" placeholder="Phone Number"><br><br>
-
-        <select>
-            <option>Basic - 1200</option>
-            <option>Mid - 1500</option>
-            <option>Premium - 1800</option>
-        </select><br><br>
-
-        <input type="text" placeholder="Delivery Location"><br><br>
-
-        <button type="submit">Place Order</button>
-    </form>
-</div>
 </body>
 </html>
