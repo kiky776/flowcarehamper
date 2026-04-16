@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flow Care Hamper</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: #fff7f9;
+    text-align: center;
+}
+
+/* HERO */
+.hero {
+    background: #f8d7da;
+    padding: 40px;
+}
+
+h1 { margin: 0; }
+
+.btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: #d6336c;
+    color: white;
+    text-decoration: none;
+    border-radius: 20px;
+}
+
+/* PRODUCTS */
+.section { padding: 30px; }
+
+.card {
+    background: white;
+    margin: 15px auto;
+    padding: 20px;
+    border-radius: 12px;
+    max-width: 300px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.05);
+}
+
+.price {
+    color: #d6336c;
+    font-weight: bold;
+}
+
+/* MESSAGE BOX */
+#messageSection {
+    display: none;
+    padding: 30px;
+}
+
+.stars span {
+    font-size: 30px;
+    cursor: pointer;
+    color: grey;
+}
+
+.stars span.active {
+    color: gold;
+}
+
+button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    border: none;
+    background: #d6336c;
+    color: white;
+    border-radius: 20px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<div class="hero">
+    <h1>Flow Care Hamper 🌸</h1>
+    <p>Turn every cycle into care and comfort.</p>
+
+    <a class="btn" href="https://wa.me/2547XXXXXXXX">Order on WhatsApp</a>
+</div>
+
+<!-- PRODUCTS -->
+<div class="section">
+    <h2>Our Packages</h2>
+
+    <div class="card">
+        <h3>Basic</h3>
+        <p>Chocolate, Tea, Eye Mask, Socks</p>
+        <p class="price">KES 1,200</p>
+    </div>
+
+    <div class="card">
+        <h3>Mid</h3>
+        <p>Basic + Notebook + Soap</p>
+        <p class="price">KES 1,500</p>
+    </div>
+
+    <div class="card">
+        <h3>Premium</h3>
+        <p>Mid + Hot Water Bottle + Card</p>
+        <p class="price">KES 1,800</p>
+    </div>
+</div>
+
+<!-- QR MESSAGE ENTRY -->
+<div class="section">
+    <h2>💌 Received a Gift?</h2>
+    <p>Enter your code to unlock your message</p>
+
+    <input id="codeInput" placeholder="Enter code">
+    <br>
+    <button onclick="openMessage()">Open Message</button>
+</div>
+
+<!-- MESSAGE SECTION -->
+<div id="messageSection">
+    <h2>⭐ Rate Your Box</h2>
+
+    <div class="stars">
+        <span onclick="rate(1)">★</span>
+        <span onclick="rate(2)">★</span>
+        <span onclick="rate(3)">★</span>
+        <span onclick="rate(4)">★</span>
+        <span onclick="rate(5)">★</span>
+    </div>
+
+    <div id="finalMessage" style="display:none;">
+        <h3>💖 Your Message</h3>
+        <p>You are loved and deserve comfort 🤍</p>
+    </div>
+</div>
+
+<script>
+function openMessage() {
+    let code = document.getElementById("codeInput").value;
+
+    if(code === "FLOW123") {
+        document.getElementById("messageSection").style.display = "block";
+    } else {
+        alert("Invalid code");
+    }
+}
+
+function rate(num) {
+    let stars = document.querySelectorAll(".stars span");
+
+    stars.forEach((s, i) => {
+        if(i < num) s.classList.add("active");
+        else s.classList.remove("active");
+    });
+
+    document.getElementById("finalMessage").style.display = "block";
+}
+</script>
+
+</body>
+</html>
