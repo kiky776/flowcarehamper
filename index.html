@@ -113,18 +113,22 @@ button {
 </div>
 
 <!-- QR MESSAGE ENTRY -->
-<div class="section">
-    <h2>💌 Received a Gift?</h2>
-    <p>Enter your code to unlock your message</p>
+<script>
+function rate(num) {
+    let stars = document.querySelectorAll(".stars span");
 
-    <input id="codeInput" placeholder="Enter code">
-    <br>
-    <button onclick="openMessage()">Open Message</button>
-</div>
+    stars.forEach((s, i) => {
+        if(i < num) s.style.color = "gold";
+        else s.style.color = "grey";
+    });
 
+    document.getElementById("messageBox").style.display = "block";
+}
+</script>
 <!-- MESSAGE SECTION -->
-<div id="messageSection">
-    <h2>⭐ Rate Your Box</h2>
+<div class="section">
+    <h2>💌 A Special Message</h2>
+    <p>Does this hamper lighten your mood? 😊✨</p>
 
     <div class="stars">
         <span onclick="rate(1)">★</span>
@@ -134,14 +138,14 @@ button {
         <span onclick="rate(5)">★</span>
     </div>
 
-    <div id="finalMessage" style="display:none;">
+    <div id="messageBox" style="display:none; margin-top:20px;">
         <h3>💖 Your Message</h3>
-        <p>Someone sent you this box to remind you:
-you are loved, cared for, and deserve softness today 🤍</p>
+        <p>
+        Someone sent you this box to remind you:
+        you are loved, cared for, and deserve softness today 🤍
+        </p>
     </div>
 </div>
-
-<script>
 function showMessage() {
     document.getElementById("messageBox").style.display = "block";
 }
