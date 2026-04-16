@@ -138,25 +138,8 @@ button {
 </div>
 
 <script>
-function openMessage() {
-    let code = document.getElementById("codeInput").value;
-
-    if(code === "FLOW123") {
-        document.getElementById("messageSection").style.display = "block";
-    } else {
-        alert("Invalid code");
-    }
-}
-
-function rate(num) {
-    let stars = document.querySelectorAll(".stars span");
-
-    stars.forEach((s, i) => {
-        if(i < num) s.classList.add("active");
-        else s.classList.remove("active");
-    });
-
-    document.getElementById("finalMessage").style.display = "block";
+function showMessage() {
+    document.getElementById("messageBox").style.display = "block";
 }
 </script>
 
