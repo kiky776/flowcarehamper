@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+ <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>   
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Flow Care Hamper</title>
@@ -52,9 +53,14 @@ h1 { margin: 0; }
     background: white;
     margin: 15px auto;
     padding: 20px;
-    border-radius: 12px;
+    border-radius: 15px;
     max-width: 300px;
-    box-shadow: 0 5px 10px rgba(0,0,0,0.05);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
 }
 
 .price {
@@ -152,7 +158,19 @@ function rate(num) {
 </div>
 
     <div id="messageBox" style="display:none; margin-top:20px; animation: fadeIn 1s;">
-    <h3>💖 Your Message</h3>
+    <div id="messageBox" style="display:none; margin-top:20px; animation: fadeIn 1s;">
+    <h3>💌 A Message For You</h3>
+
+    <p style="font-size:18px;">
+    Someone thought of you.  
+    Someone wanted you to feel better.  
+    Someone chose this for you 🤍  
+    </p>
+
+    <p style="margin-top:15px;">
+    You are loved, cared for, and deserve softness today 💖
+    </p>
+</div>
     <p>
     Someone sent you this box to remind you:
     you are loved, cared for, and deserve softness today 🤍
@@ -177,8 +195,12 @@ function rate(num) {
 
     document.getElementById("messageBox").style.display = "block";
 
-    // Celebration effect
-    alert("✨ Thank you! Enjoy your surprise 💖");
+    // 🎊 CONFETTI
+    confetti({
+        particleCount: 100,
+        spread: 70,
+        origin: { y: 0.6 }
+    });
 }
 </script>
 <div class="section">
